@@ -1,31 +1,35 @@
-//let iva = 1.21
-//let nombreCompleto = Number (100);
-//alert (nombreCompleto * iva);
-
-//console.log (alert);
 
 let nombre = prompt ("Ingrese Nombre y Apellido");
 let dni = prompt ("Ingrese DNI");
 let monto = parseInt( prompt (`Hola ${nombre} Dni ${dni} Monto de su prestamo`)) ;
+while (monto < 0) {
+    alert ("Monto invalido")
+    monto = parseInt( prompt (`Hola ${nombre} Dni ${dni} Monto de su prestamo`)) ;
+}
 let cuotas = parseInt (prompt ("Cantida de Cuotas"));
-let tres = (monto * 1.25);
-let seis = (monto * 1.5);
-let doce = (monto * 2);
-let masdoce = (monto * 3);
+while (cuotas > 24) {
+    alert ("Maximo 24 cuotas")
+    cuotas = parseInt (prompt ("Cantida de Cuotas"));
+}
+
+const xcuotas  = (a , b) => a * b;
+
+
 
 
 if ( cuotas <= 3) {
-   alert ( `25% de interes. Total a pagar ${tres}`);
+   alert ( `25% de interes. Total a pagar ${xcuotas (monto , 1.25)}`);
    
- }
-    else if (cuotas <= 6 ) {
+} else if (cuotas <= 6 ) {
 
-    alert (`50% de interes. Total a pagar ${seis}`);   
-} 
-else if ( cuotas <= 12) {
-    alert(`100% de interes. Total a pagar ${doce}`);
+    alert (`50% de interes. Total a pagar ${xcuotas (monto , 1.5)}`);   
+
+} else if ( cuotas <= 12) {
+
+    alert(`100% de interes. Total a pagar ${xcuotas(monto , 200)}`);
 }
-else if (cuotas > 12) { 
-    alert (`200% de interes. Total a pagar ${masdoce}`);
+else if (cuotas < 24) { 
+    alert (`200% de interes. Total a pagar ${xcuotas(monto , 3)}`);
 }
+
 

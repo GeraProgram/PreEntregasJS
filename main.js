@@ -26,7 +26,7 @@ if ( cuotas <= 3) {
 
 } else if ( cuotas <= 12) {
 
-    alert(`100% de interes. Total a pagar ${xcuotas(monto , 200)}`);
+    alert(`100% de interes. Total a pagar ${xcuotas(monto , 2)}`);
 }
 else if (cuotas < 24) { 
     alert (`200% de interes. Total a pagar ${xcuotas(monto , 3)}`);
